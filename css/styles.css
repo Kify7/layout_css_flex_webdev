@@ -3,6 +3,7 @@
     --primario: #ffc107;
     --secundario: #0097A7;
     --oscuro: #212121;
+    --gris: #757575;
 }
 
 * apply a natural box layout model to all elements, but allowing components to change */
@@ -18,7 +19,7 @@ body {
     min-height: 100%;
     font-family: "Krub", sans-serif;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background-attachment: fixed;
 }
 h1, h2, h3 {
@@ -30,7 +31,12 @@ h2, h3 {
 h3 {
     color: var(--secundario);
     font-weight: 400;
-    font-size: 2.2rem;
+    font-size: 2rem;
+}
+p {
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: left;
 }
 .site-header {
     background-color: white;
@@ -51,7 +57,7 @@ h3 {
 }
 .site-header nav a {
     color: var(--oscuro);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-decoration: none;
     margin-bottom: 2rem;
 }
@@ -87,8 +93,11 @@ h3 {
     text-align: center;
 }
 .contenedor-hero i {
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: var(--primario);
+}
+.contenedor-hero p {
+    text-align: center;
 }
 .boton {
     background-color: var(--secundario);
@@ -99,13 +108,16 @@ h3 {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: .5rem;
+    border: none;
 }
-
+.boton:hover {
+    cursor: pointer;
+}
 .contenedor {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 3rem auto;
     background-color: white;
     padding: 3rem;
     border-radius: 1rem;
@@ -113,14 +125,91 @@ h3 {
     -moz-box-shadow: 0px 10px 21px -9px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 21px -9px rgba(0,0,0,0.75);
 }
-.servicios {
-    margin: 3rem auto;
-}
+
 @media (min-width: 768px) {
     .contenedor-servicios {
         display: flex;
+        justify-content: space-between;
     }
     .servicio {
-        flex: 1;
+        flex: 0 0 calc(33.3% - 1rem);
     }
+}
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-servicios {
+    margin-top: 3rem;
+}
+.iconos {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--primario);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+}
+.iconos {
+    font-size: 2.5rem;
+}
+
+form {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+form legend {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primario);
+    margin: 2rem 0;
+}
+@media (min-width: 768px) {
+    form {
+        max-width: 850px;
+        margin: 2rem auto;
+    }
+    .contenedor-campos {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .campo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+.campo {
+    display: flex;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    color: white;
+}
+.campo label {
+    flex: 0 0 90px;
+}
+.campo input {
+    flex: 1;
+    height: 3.5rem;
+    padding: 0;
+}
+.campo textarea {
+    flex: 1;
+    height: 6rem;
+}
+.w-100 {
+    flex: 0 0 100%;
+}
+.enviar {
+    display: flex;
+    justify-content: flex-end;
 }
